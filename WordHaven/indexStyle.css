@@ -1,3 +1,6 @@
+body {
+  scroll-behavior: smooth;
+}
 .navBar .theBox {
   display: flex;
   flex-direction: row;
@@ -11,14 +14,14 @@
   color: #800080;
   background-color: #fff;
 }
-.navBar .churchName a {
+.navBar .churchName a,
+.navBar .churchName a div {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
 }
 .navBar .churchName a div {
-  display: flex;
   flex-direction: column;
   justify-content: baseline;
 }
@@ -87,8 +90,8 @@
   opacity: 1;
   text-decoration: none;
 }
-.navBar .hamburger {
-}
+/* .navBar .hamburger {
+} */
 .navBar .hamburger img {
   width: 2rem;
   height: 2rem;
@@ -134,7 +137,8 @@
   border-radius: 50%;
   padding: 0.5rem;
 }
-.bannerHeader div button {
+.bannerHeader div button,
+.contactBanner button {
   width: 18rem;
   height: 4rem;
   font-size: 1.8rem;
@@ -147,8 +151,9 @@
   cursor: pointer;
 }
 .bannerHeader div button:hover,
-.pleasantry button:hover {
-  background-color: #58181f;
+.pleasantry button:hover,
+.contactBanner button {
+  background-color: hsl(353, 57%, 22%);
   color: #e8e8e8;
 }
 .bannerHeader div span {
@@ -169,20 +174,20 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  background-color: #fff;
+  background-color: #ececec;
 }
 .lilIntro div {
   padding: 1.5rem;
-  color: rgba(0, 0, 0, 0.65);
+  color: rgba(0, 0, 0, 0.8);
 }
 .lilIntro div h2 {
   display: block;
   font-size: 1.5rem;
-
   line-height: 3rem;
   font-family: "Raleway", sans-serif;
 }
-.lilIntro div h2 span {
+.lilIntro div h2 span,
+.service_sections h2 {
   display: block;
   font-size: 3rem;
   line-height: 3rem;
@@ -190,9 +195,12 @@
   font-family: "Lora", sans-serif;
 }
 .lilIntro div p {
+  font-size: 1.1rem;
+}
+.lilIntro div p,
+.service_sections p {
   padding: 2rem 0;
   display: block;
-  font-size: 1.1rem;
   font-weight: 400;
   line-height: 2rem;
   font-family: "Montserrat", sans-serif;
@@ -203,32 +211,49 @@
 }
 
 .mission {
-  background-color: #eee;
+  background-attachment: fixed;
 }
 .mission {
-  padding: 6rem 0 2rem 0;
+  padding: 3rem 0 0rem 0;
   display: flex;
   flex-direction: column;
   justify-content: baseline;
   align-items: center;
+  background-image: url(./img/WordHaven.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.85);
+  background-blend-mode: darken;
+  background-attachment: fixed;
 }
 .mission .intro {
   font-family: "Open Sans", sans-serif;
-  line-height: 3.5rem;
+  line-height: 5rem;
   font-size: 1.2rem;
   text-align: center;
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 .mission .intro span {
   font-family: "Raleway", sans-serif;
   font-size: 3rem;
   text-align: center;
+  color: #fff;
 }
 .mission .intro p {
-  line-height: 2rem;
+  line-height: 2.5rem;
+  color: #fff;
+  font-size: 1.5rem;
 }
 .mission .intro .Ourmission {
-  color: #58181f;
+  color: #a71d2d;
   font-style: italic;
+  width: 60%;
 }
 .values {
   padding: 4rem 4rem;
@@ -236,6 +261,7 @@
   flex-direction: row;
   justify-content: baseline;
   align-items: center;
+  background-color: #ececec;
 }
 
 .value {
@@ -327,6 +353,7 @@ iframe {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-attachment: fixed;
 }
 .remarks div {
   font-family: "Lora", sans-serif;
@@ -589,6 +616,9 @@ footer figure a img {
     font-size: xx-large;
     padding: 0 1rem;
   }
+  .mission .intro .Ourmission {
+    max-width: 90%;
+  }
   .remarks div p {
     line-height: normal;
     color: #58181f;
@@ -680,7 +710,9 @@ footer figure a img {
   .mission .intro p {
     line-height: 2.5rem;
   }
-
+  .mission .intro .Ourmission {
+    width: 90%;
+  }
   .sermons,
   .sermons div {
     flex-direction: column;
@@ -841,6 +873,9 @@ footer figure a img {
   .navBar .navLinks ul div li {
     padding: 1rem 0;
   }
+  .mission .Ourmission {
+    width: 90%;
+  }
 }
 @media screen and (max-width: 750px) and (max-height: 550px) {
   .navBar .theBox {
@@ -877,4 +912,19 @@ footer figure a img {
   .sermons h2 {
     font-size: 3rem;
   }
+  .mission .Ourmission {
+    width: 90%;
+  }
+}
+.pic_anim {
+  opacity: 0;
+  filter: blur(5px);
+  transform: translateY(50%);
+  transition: all 600ms ease-in-out;
+}
+.value {
+  opacity: 0;
+  filter: blur(5px);
+  transform: translateX(-100%);
+  transition: all 700ms ease-in-out;
 }
